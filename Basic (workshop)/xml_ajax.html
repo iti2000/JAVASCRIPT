@@ -1,0 +1,38 @@
+<script>
+    function lw(){
+
+        //we can get the content of another page of url to our page in realtime
+        //means the things changing in the server , automatically the client can get the response
+
+        //sync 
+        // var xhr = new XMLHttpRequest();  --->it is class so write new
+        // xhr.open("GET","http://127.0.0.1:5500/Basic/css_js.html",false);  --->false allow sync 
+        // xhr.send();
+
+        //async 
+        var xhr = new XMLHttpRequest();  //--->it is class so write new
+        xhr.open("GET","http://127.0.0.1:5500/Basic/css_js.html",true);  //true allow async 
+        xhr.send();
+
+        //to get the input from client and then send data to backend and retrive information regarding that data
+        // name = document.getElementById("d1").value;
+        // xhr.open("GET","http://127.0.0.1:5500/Basic/css_js.html?x=" + name,true);
+
+        //output from above url in sync is store here 
+
+        // var output = xhr.responseText;
+        // document.getElementById("d1").innerHTML = output;
+
+        //to get output from async
+        xhr.onload  = lw1();  //-->as soon as output come this event run and till then we can continue other events
+
+        function lw(){
+        var output = xhr.responseText;
+        document.getElementById("d1").innerHTML = output;
+        }
+
+    }
+</script>
+
+<div id="d1">Hello</div>
+<button onclick="lw();">Click Me</button>

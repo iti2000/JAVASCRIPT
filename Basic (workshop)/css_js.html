@@ -1,0 +1,44 @@
+<style>
+  div#d2 {
+    color: purple;
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    left: 0px;
+    bottom: 0px;
+    border: 4px solid black;
+  }
+</style>
+
+<script>
+  i = 0;
+
+  function mymove() {
+    var r1 = document.getElementById("d2");
+    r1.style.left = i;
+    r1.style.height = 100 + 1;
+
+    i++;
+    setTimeout(mymove, 100);
+   
+  }
+
+  function lw() {
+    var r = document.getElementById("d3");
+    r.style.border = "5px solid red";
+    r.style.width = "100px";
+    r.style.height = "100px";
+  }
+  function lw1() {
+    var r = document.getElementById("d3");
+    r.style.border = "2px dotted red";
+    r.style.width = "50px";
+    r.style.height = "50px";
+  }
+</script>
+
+<div id="d1">first</div>
+<div id="d2">second</div>
+<div id="d3" onmouseout="lw1();">third</div>
+
+<p onclick="mymove();">click</p>

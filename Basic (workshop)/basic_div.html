@@ -1,0 +1,50 @@
+<!--
+<div id="d1">first</div>
+<div id="d2">second</div>
+<div id="d3">third</div>
+ -->
+
+<!-- here if we dont have unique id we can do it by tags also -->
+ <div>First</div>
+ <div>second</div>
+ <div>third</div>
+
+
+
+<script>
+  function iti() {
+
+    /*
+    
+    i = document.getElementById("in1");
+    //alert(i.value);      ---->it is an input feild so , we need to type value instead of innerhtml
+
+    x = document.getElementById("d3");
+    y = document.getElementById("d1");
+
+    //data = x.innerHTML; ----->it has content of the (d1) div tag
+    // alert(data);
+
+    //x.innerHTML = "hi iti"; ------>to change particular data
+    //alert(data);
+
+    //x.innerHTML = y.innerHTML;    ----->to swap the content
+   
+    x.innerHTML = i.value;
+
+    */
+
+    x = document.getElementsByTagName("div");
+   // alert(x.length);   --->here x will contain the list containing all the divs
+
+   //to check directly on browser
+   //alert( document.getElementsByTagName("div").length);
+
+
+   alert(x[0].innerHTML);
+}
+
+</script>
+
+<button onclick="iti()">Click Me</button>
+<input id="in1" />

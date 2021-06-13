@@ -1,0 +1,34 @@
+<script>
+  function lw() {
+    var i = document.getElementById("in1");
+    var j = document.getElementById("d1");
+
+    j.innerHTML = i.value;
+  }
+
+  function lwa() {
+    j = document.getElementById("d1");
+
+    //document.location= j.innerHTML;
+
+    document.location = "http://" + j.innerHTML;
+  }
+
+  //js speak responsive library -->you have to first import than this code will work
+  function lws(){
+      responsiveVoice.speak("hello world","UK English Male");
+  }
+
+</script>
+
+<input id="in1" onkeyup="lw();" />
+
+<div id="d1" onclick="lwa();">My content</div>
+
+
+
+<!-- stackoverflow solution for text to speak -->
+<script src='https://code.responsivevoice.org/responsivevoice.js'>
+</script>
+
+<input onclick="responsiveVoice.speak(j.innerHTML);" type='button' value='🔊 Play' />

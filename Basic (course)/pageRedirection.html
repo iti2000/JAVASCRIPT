@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="dis">
+        hello this would disapper
+    </p>
+    <input type="button" value="click me to redirect" onclick="redirection()">
+    <input type="button" value="click me to reload" onclick="reload()">
+    <input type="button" value="vanish" onclick="vanish()">
+    
+    <script>
+        function redirection(){
+            window.location = "https://google.com"
+        }
+        function reload(){
+            window.location.reload();
+        }
+        function vanish(){
+            document.getElementById('dis').innerHTML =" ";
+        }
+    </script>
+    
+</body>
+</html>
